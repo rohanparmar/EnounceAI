@@ -1,7 +1,7 @@
 import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 response = openai.Completion.create(
   engine="text-davinci-001",
@@ -13,4 +13,9 @@ response = openai.Completion.create(
   presence_penalty=0
 )
 
+text = response["choices"][0]["text"]
+f = open('result.txt', 'w')
+
+f.write(text)
+  
 print(response)
